@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText":  "data-table",
+  "navigationBarBackgroundColor": "#fff",
+  "navigationBarTextStyle": "black",
+  "usingComponents": {
+    "navigation-bar": "/components/navigation-bar/navigation-bar",
+    "data-table": "/components/data-table/data-table"
+  }
+}

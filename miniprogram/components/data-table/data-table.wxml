@@ -1,0 +1,37 @@
+<view class="data-table-component">
+  <view class="table" style="{{ width && 'width:'+ width }}">
+    <view class="thead">
+      <view class="tr">
+        <view class="th" 
+          wx:for="{{header}}" 
+          wx:key="index" 
+          style="flex: 0 0 {{ item.width }}rpx;background: {{headerBgColor}};justify-content: {{align}}" >{{ item.label }}</view>
+        <view 
+          wx:if="{{ showOperateColumn }}" 
+          class="th operate-column" 
+          style="flex: 0 0 {{ operateColumnWidth }}rpx;background: {{headerBgColor}};justify-content: {{align}}">{{ operateColumnLabel }}</view>
+      </view>
+    </view>
+    <view class="tbody" style="{{height && 'max-height:' + height }}" wx:if="{{ list.length }}">
+      <view class="tr {{stripe?'stripe':''}}" wx:for="{{list}}" wx:key="index" wx:for-item="row">
+        <view class="td" 
+          wx:for="{{header}}" 
+          wx:key="i" 
+          wx:for-index="i" 
+          wx:for-item="th" 
+          style="flex: 0 0 {{ th.width }}rpx;justify-content: {{align}}" 
+        >{{ row[th.prop] || '-' }}</view>
+        <view
+          style="flex: 0 0 {{ operateColumnWidth }}rpx;justify-content: {{align}}"        
+          wx:if="{{ showOperateColumn}}" 
+          class="td operate-column" 
+          data-index="{{ index }}" 
+          data-item="{{ row }}" 
+          bindTap="bindOperate">
+          <slot name="operate"></slot>
+        </view>
+      </view>
+    </view>
+    <view class="empty-table" wx:else>暂无数据~</view>
+  </view>
+</view>

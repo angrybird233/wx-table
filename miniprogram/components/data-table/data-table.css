@@ -1,0 +1,57 @@
+.data-table-component {
+  overflow-x: scroll;
+  width: 100%;
+  height: 100%;
+  padding-bottom: 20rpx;
+}
+.data-table-component .table {
+  padding: 0 5rpx;
+}
+.data-table-component .table .thead {
+  position: sticky;
+  top: 0;
+  z-index: 999999;
+}
+.data-table-component .table .thead .tr {
+  display: flex;
+}
+.data-table-component .table .thead .th {
+  height: 70rpx;
+  color: #fff;
+  padding: 5rpx 10rpx;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: flex;
+  align-items: center;
+  font-size: 28rpx;
+}
+.data-table-component .table .tbody {
+  min-height: 500rpx;
+}
+.data-table-component .table .tbody .tr {
+  color: #000;
+  display: flex;
+  flex-direction: row;
+}
+.data-table-component .table .tbody .tr .td {
+  min-height: 60rpx;
+  white-space: normal;
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  padding: 5rpx 10rpx;
+}
+.data-table-component .table .tbody .tr.stripe:nth-child(even) .td {
+  background: #d2d3d4;
+}
+.data-table-component .table .tbody .tr.stripe:nth-child(odd) .td {
+  background: #fff;
+}
+.data-table-component .empty-table {
+  padding: 200rpx 0;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
